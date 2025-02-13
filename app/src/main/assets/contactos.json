@@ -1,0 +1,33 @@
+{ "contactos":[
+                {
+                  "name": "John Doe",
+                  "address": "123 Main St",
+                  "city": "Anytown",
+                  "phones": {
+                    "landline": "555-123-4567",
+                    "mobile": "555-987-6543",
+                    "work": "555-111-2222"
+                  }
+                },
+                {
+                  "name": "Jane Smith",
+                  "address": "456 Oak Ave",
+                  "city": "Springfield",
+                  "phones": {
+                    "landline": "555-246-8010",
+                    "mobile": "555-369-1212",
+                    "work": "555-456-7890"
+                  }
+                },
+                {
+                  "name": "Peter Jones",
+                  "address": "789 Pine Ln",
+                  "city": "Riverdale",
+                  "phones": {
+                    "landline": "555-789-0123",
+                    "mobile": "555-654-3210",
+                    "work": "555-101-1122"
+                  }
+                }
+              ]
+}
