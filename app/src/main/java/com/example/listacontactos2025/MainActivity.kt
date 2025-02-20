@@ -14,8 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listacontactos2025.adapter.ContactosAdapter
 import com.example.listacontactos2025.databinding.ActivityMainBinding
 import com.example.listacontactos2025.modelo.Contacto
+import com.example.listacontactos2025.modelo.Persona
 import com.example.listacontactos2025.modelo.Telefono
 import com.example.listacontactos2025.utils.Analisis
+import com.google.gson.Gson
+import com.google.gson.JsonSyntaxException
 import org.json.JSONException
 import java.io.IOException
 
@@ -66,9 +69,8 @@ class MainActivity : Activity(), View.OnClickListener {
     fun obtenerContactos(): ArrayList<Contacto> {
         var contactos: ArrayList<Contacto> = ArrayList()
         lateinit var contenido: String
-        // lateinit var gson: Gson
-        // lateinit var persona: Persona
-        lateinit var telefono: Telefono
+        lateinit var gson: Gson
+        lateinit var persona: Persona
 
         try {
             if (!binding.switch1.isChecked) {
@@ -77,19 +79,17 @@ class MainActivity : Activity(), View.OnClickListener {
                 contactos = Analisis.analizarContactos(contenido)
             } else {
                 // usar Gson
-
-
-
-
-
-
+                contenido = leerAsset(applicationContext, CONTACTS)
+                gson = Gson()
+                persona = gson.fromJson(contenido, Persona::class.java)
+                contactos = persona.contactos as ArrayList<Contacto>
             }
         } catch (e: IOException) {
             Log.e("Error: ", e.message.toString())
             mostrarMensaje("Error: " + e.message.toString())
-            //} catch (e: JsonSyntaxException) {
-            //    Log.e("Error: ", e.message.toString())
-            //    mostrarMensaje("Error: " + e.message.toString())
+        } catch (e: JsonSyntaxException) {
+            Log.e("Error: ", e.message.toString())
+            mostrarMensaje("Error: " + e.message.toString())
         } catch (e: JSONException) {
             //e.printStackTrace();
             Log.e("Error: ", e.message.toString())

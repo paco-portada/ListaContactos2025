@@ -1,0 +1,33 @@
+{ "contactos":[
+  {
+    "name": "Angelina Jolie",
+    "address": "calle los remedios, 29007",
+    "city": "Málaga",
+    "phones": {
+      "landline": "555-123-4567",
+      "mobile": "603459530",
+      "work": "555-111-2222"
+    }
+  },
+  {
+    "name": "Nikole Kidman",
+    "address": "calle hilera, 29010",
+    "city": "Málaga",
+    "phones": {
+      "landline": "555-246-8010",
+      "mobile": "625459540",
+      "work": "555-456-7890"
+    }
+  },
+  {
+    "name": "Jennifer Lopez",
+    "address": "calle larios, 29002",
+    "city": "Málaga",
+    "phones": {
+      "landline": "555-789-0123",
+      "mobile": "628659550",
+      "work": "555-101-1122"
+    }
+  }
+]
+}

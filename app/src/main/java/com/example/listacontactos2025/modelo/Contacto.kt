@@ -1,9 +1,14 @@
 package com.example.listacontactos2025.modelo
 
-data class Contacto (
-    var nombre: String,
-    var direccion: String,
-    var ciudad: String,
-    // var email: String,
-    var telefono: Telefono
+import com.google.gson.annotations.SerializedName
+
+data class Contacto(
+    @SerializedName("name")
+    val nombre: String,
+    @SerializedName("address")
+    val direccion: String,
+    @SerializedName("city")
+    val ciudad: String,
+    @SerializedName("phones")
+    val telefono: Telefono
 )
